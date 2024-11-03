@@ -11,7 +11,7 @@ import SwiftUI
 struct JournalingApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+        Empty_State()
         }
     }
 }

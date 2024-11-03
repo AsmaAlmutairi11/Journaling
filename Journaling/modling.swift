@@ -9,8 +9,10 @@ import SwiftUI
 
 
 struct modling: Identifiable {
-    var id: ObjectIdentifier
-    
-    let gg: UUID = .init()
+    let id: UUID = .init()
+    var title: String = ""
+     var text: String = ""
+     var date = Date()
+     var isBookmarked: Bool = false
 }
 
