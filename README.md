@@ -1,13 +1,8 @@
-#Journal
+# Journal
 
 An Journal App is a useful App to create, reflect, and experience your journals. User an able to create, edit, and put a bookmarked.
 
-#Screenshots 
-
-
- 
-
-
+# Screenshots 
 
 
 <img width="681" alt="Screenshot 1446-04-29 at 3 23 16 PM" src="https://github.com/user-attachments/assets/ee347236-207a-4725-a2e9-0906d7bcb61f">
