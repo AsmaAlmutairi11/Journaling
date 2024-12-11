@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-class viewmodel: ObservableObject {
+class ViewModel: ObservableObject {
     @Published var journals: [modling] = []
     @Published var showingsheet = false
     @Published var isActive = true
@@ -17,7 +17,8 @@ class viewmodel: ObservableObject {
     @Environment(\.dismiss) var dismiss
     @Published var title: String = ""
     @Published var newJournaltext: String = ""
-    @State var BookmarkFiliter = false
+    @State var BookmarkFiliter : Bool = false
+    @Published var dateFilter: Bool = false
 
     let currentDate: DateFormatter = {
         let formatter = DateFormatter()
@@ -31,20 +32,30 @@ class viewmodel: ObservableObject {
     }
     
     func bookmark() {
-        self.BookmarkFiliter = true
-        print("Bookmark action")
+        BookmarkFiliter.toggle()
+        applyFilters()
     }
     
     func date() {
-        
-        print("Date action")
+        dateFilter.toggle()
+        applyFilters()
     }
     
     func saveJournal() {
-        let newJournal = modling(title: title,
-                                 text: newJournaltext,
-                                 date: .now,
-                                 isBookmarked: false)
+        let newJournal = modling(title: title, text: newJournaltext, date: .now, isBookmarked: false)
         journals.append(newJournal)
+        title = ""
+        newJournaltext = ""
+        applyFilters()
+    }
+    
+    private func applyFilters() {
+        if BookmarkFiliter {
+            journals = journals.filter { $0.isBookmarked }
+        }
+
+        if dateFilter {
+            journals.sort { $0.date > $1.date }
+        }
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7264693A2CC7D4AC00ABAF90 /* sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726469392CC7D4AC00ABAF90 /* sheet.swift */; };
+		726E316B2D07160F00E33D20 /* Journal_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726E316A2D07160C00E33D20 /* Journal_Detail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,7 @@
 		726468F42CC53C7900ABAF90 /* JournalingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JournalingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		726468FE2CC53C7900ABAF90 /* JournalingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JournalingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		726469392CC7D4AC00ABAF90 /* sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sheet.swift; sourceTree = "<group>"; };
+		726E316A2D07160C00E33D20 /* Journal_Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal_Detail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -80,6 +82,7 @@
 		726468DB2CC53C7800ABAF90 = {
 			isa = PBXGroup;
 			children = (
+				726E316A2D07160C00E33D20 /* Journal_Detail.swift */,
 				726469392CC7D4AC00ABAF90 /* sheet.swift */,
 				726468E62CC53C7800ABAF90 /* Journaling */,
 				726468F72CC53C7900ABAF90 /* JournalingTests */,
@@ -242,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				726E316B2D07160F00E33D20 /* Journal_Detail.swift in Sources */,
 				7264693A2CC7D4AC00ABAF90 /* sheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

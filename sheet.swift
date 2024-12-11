@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct Sheet1: View {
-    @StateObject var asma = viewmodel()
+    @StateObject var asma = ViewModel()
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.dismiss) var dismiss
+    var existingJournal: modling? // The journal to edit if available
 
-
+    @State private var title: String = ""
+    @State private var text: String = ""
     
     var body: some View {
         ZStack{
@@ -26,7 +28,7 @@ struct Sheet1: View {
                         .padding(.top, 30)
                     
                     
-                    Text("\(asma.currentDate)")
+                    Text(DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .none))
                         .foregroundColor(.gray)
                         .font(.system(size: 16) .weight(.regular))
                         .frame(width: 87.4, height: 19, alignment: .leading)
@@ -44,21 +46,35 @@ struct Sheet1: View {
                 .toolbar{
                     ToolbarItem(placement: .navigationBarLeading){
                         Button("cancel"){
-                            presentationMode.wrappedValue.dismiss()
-                            }
+                            dismiss()
+                        }
                     }
-                        ToolbarItem(placement: .navigationBarTrailing){
-                            Button("save"){
-                                asma.saveJournal()
-                                presentationMode.wrappedValue.dismiss()
-                            }
-                                .bold()
+                    ToolbarItem(placement: .navigationBarTrailing){
+                        Button("save"){
+                            saveChanges()
+                            dismiss()
+                        }
+                        .bold()
                     }
                 }
             }
-       
+            
         }
-}}
+    }
+    
+    private func saveChanges() {
+        if let journalIndex = asma.journals.firstIndex(where: { $0.id == existingJournal?.id }) {
+            // Update the existing journal
+            asma.journals[journalIndex].title = title
+            asma.journals[journalIndex].text = text
+        } else {
+            // Create a new journal if it doesn't exist
+            let newJournal = modling(title: title, text: text, date: Date(), isBookmarked: false)
+            asma.journals.append(newJournal)
+        }
+    }
+}
+
 
 #Preview {
     Sheet1()
