@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		725B11B42D136188009341EE /* JournalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B11B32D136179009341EE /* JournalList.swift */; };
 		7264693A2CC7D4AC00ABAF90 /* sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726469392CC7D4AC00ABAF90 /* sheet.swift */; };
 		726E316B2D07160F00E33D20 /* Journal_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726E316A2D07160C00E33D20 /* Journal_Detail.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		725B11B32D136179009341EE /* JournalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalList.swift; sourceTree = "<group>"; };
 		726468E42CC53C7800ABAF90 /* Journaling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journaling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		726468F42CC53C7900ABAF90 /* JournalingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JournalingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		726468FE2CC53C7900ABAF90 /* JournalingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JournalingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +84,7 @@
 		726468DB2CC53C7800ABAF90 = {
 			isa = PBXGroup;
 			children = (
+				725B11B32D136179009341EE /* JournalList.swift */,
 				726E316A2D07160C00E33D20 /* Journal_Detail.swift */,
 				726469392CC7D4AC00ABAF90 /* sheet.swift */,
 				726468E62CC53C7800ABAF90 /* Journaling */,
@@ -245,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				725B11B42D136188009341EE /* JournalList.swift in Sources */,
 				726E316B2D07160F00E33D20 /* Journal_Detail.swift in Sources */,
 				7264693A2CC7D4AC00ABAF90 /* sheet.swift in Sources */,
 			);

@@ -65,7 +65,7 @@ struct Empty_State: View {
                                 .foregroundColor(.purple11)
                         }
                         .sheet(isPresented: $Raghad.showingsheet) {
-                            Sheet1(asma: Raghad)
+                            Sheet(asma: Raghad)
                         }
                     }
                 }
@@ -143,7 +143,7 @@ struct Empty_State: View {
                                 .foregroundColor(.purple11)
                         }
                         .sheet(isPresented: $Raghad.showingsheet) {
-                            Sheet1(asma: Raghad)
+                            Sheet(asma: Raghad)
                         }
                     }
                 }

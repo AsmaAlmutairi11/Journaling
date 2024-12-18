@@ -5,52 +5,53 @@
 //  Created by Asma Mohammed on 26/04/1446 AH.
 //
 
-
-import SwiftUI
+import Foundation
 
 class ViewModel: ObservableObject {
     @Published var journals: [modling] = []
     @Published var showingsheet = false
     @Published var isActive = true
     @Published var search: String = ""
-    @Published var selectedjournals: Journal?
-    @Environment(\.dismiss) var dismiss
     @Published var title: String = ""
-    @Published var newJournaltext: String = ""
-    @State var BookmarkFiliter : Bool = false
+    @Published var newJournalText: String = ""
+    @Published var selectedJournals: modling?
+
+    // Filter flags
+    @Published var bookmarkFilter: Bool = false
     @Published var dateFilter: Bool = false
 
+    // Formatter
     let currentDate: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .none
         return formatter
     }()
-    
+
     func deleteJournal(at index: Int) {
         journals.remove(at: index)
     }
-    
+
     func bookmark() {
-        BookmarkFiliter.toggle()
+        bookmarkFilter.toggle()
         applyFilters()
     }
-    
+
     func date() {
         dateFilter.toggle()
         applyFilters()
     }
-    
+
     func saveJournal() {
-        let newJournal = modling(title: title, text: newJournaltext, date: .now, isBookmarked: false)
+        let newJournal = modling(title: title, text: newJournalText, date: .now, isBookmarked: false)
         journals.append(newJournal)
         title = ""
-        newJournaltext = ""
+        newJournalText = ""
         applyFilters()
     }
-    
+
     private func applyFilters() {
-        if BookmarkFiliter {
+        if bookmarkFilter {
             journals = journals.filter { $0.isBookmarked }
         }
 
